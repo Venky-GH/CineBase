@@ -9,9 +9,9 @@
     <link rel="stylesheet" href="/css/bootstrap-multiselect.css">
 </head>
 <body>
-<div class="container">
-    <div class="header">
-        Add New Movie
+<div class="container movie_form_page">
+    <div class="header text-center">
+        <span class="form_type"></span> New Movie
     </div>
     <form class="add_movie_form" id="add_movie_form">
         <div class="form-group">
@@ -21,9 +21,10 @@
         <div class="form-group">
             <label>Image</label>
             <input type="file" class="form-control file_type" id="image_file" name="image">
+            <div class="note"><span class="header">Note</span>: Ignore if previously added or choose a new one replace the older image.</div>
         </div>
         <div class="form-group">
-            <label>Select/Add Actors</label> <br>
+            <label>Select/Add Actors*</label> <br>
             <input type="radio" name="actor_type" value="1"> Select Existing Actors <br>
             <input type="radio" name="actor_type" value="2"> Add New Actors <br>
         </div>
@@ -32,7 +33,7 @@
             <select id="actor_list" multiple="multiple"></select>
         </div>
         <div class="form-group new_actor hidden">
-            <label>Add new actor</label>
+            <label>Add new actor*</label>
             <div class="actor_chip_holder">
 
             </div>
@@ -49,7 +50,7 @@
             <select id="producer_list"></select>
         </div>
         <div class="form-group new_producer hidden">
-            <label>Add new producer</label>
+            <label>Add new producer*</label>
             <div class="producer_chip_holder">
 
             </div>
@@ -57,14 +58,16 @@
             <button type="button" id="add_producer" class="btn" data-toggle="modal" data-target="#details_modal">Add Producer</button>
         </div>
         <div class="form-group">
-            <label>Year of Release</label>
+            <label>Year of Release*</label>
             <input type="text" class="form-control" name="yor" id="m_yor" placeholder="Eg: 2001">
         </div>
         <div class="form-group">
-            <label>Plot</label>
-            <textarea name="plot" id="m_plot" class="form-control" rows="5"></textarea>
+            <label>Plot*</label>
+            <textarea name="plot" placeholder="Plot of the Movie...." id="m_plot" class="form-control" rows="5"></textarea>
         </div>
-        <input type="submit" class="btn" value="Submit">
+        <div class="form-group text-center">
+            <input type="submit" class="btn" value="SUBMIT">
+        </div>
     </form>
 </div>
 
@@ -96,7 +99,9 @@
                         <label>Bio*</label>
                         <textarea name="bio" class="form-control" id="d_bio" rows="10" placeholder="Type in the biography" required></textarea>
                     </div>
-                    <input type="submit" class="btn" value="SUBMIT">
+                    <div class="form-group text-center">
+                        <input type="submit" class="btn" value="SUBMIT">
+                    </div>
                 </form>
             </div>
         </div>

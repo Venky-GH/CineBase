@@ -56,6 +56,9 @@ function list_movies_details() {
 }
 
 function setEventListeners() {
+  $("#add_movie_btn").click(function () {
+    location.href = "/add-update-movie";
+  });
   $(".edit_movie").click(function () {
     let movie_detail_block = $(this).parents(".movie_detail_block");
     main_form_details.id = movie_detail_block.attr("id");
@@ -88,7 +91,7 @@ function setEventListeners() {
             localStorage.setItem("movie_details", JSON.stringify(main_form_details));
 
             // redirect to add-movie screen with all the data
-            location.href = "/add-movie?requestType=" + 1;
+            location.href = "/add-update-movie?requestType=1";
           });
         }
       },

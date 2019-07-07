@@ -2,9 +2,20 @@ body {
     font-family: 'Roboto', sans-serif !important;
 }
 
-.movie_details_holder {
+.movie_details_page {
     padding: 5rem;
     box-shadow: 0px 5px 5px rgba(0,0,0,0.2);
+}
+
+.movie_details_page .heading {
+    font-size: 3rem;
+    text-align: center;
+    font-weight: 700;
+    margin-bottom: 5rem;
+}
+
+.movie_details_page .add_movie_btn, .edit_movie_btn {
+    text-align: right;
 }
 
 .movie_detail_block {
@@ -18,29 +29,33 @@ body {
 }
 
 .basic_details .movie_name {
-    font-size: 4rem;
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
 }
 
 .basic_details .info {
     color: #707070;
+    margin-right: 2rem;
+    font-size: 1.55rem;
 }
 
-.basic_details .actors {
+.basic_details .actors, .basic_details .producer {
     font-size: 1.5rem;
 }
 
-.basic_details .producer {
-    font-size: 2rem;
-}
-
 .basic_details .yor {
-    font-size: 3rem;
+    font-size: 2.2rem;
+    font-weight: 600;
+    margin-top: 1rem;
 }
 
 .movie_detail_block .plot {
     margin: 3rem 0rem;
-    font-size: 1.7rem;
-    line-height: 1.5;
+    font-size: 1.5rem;
+    font-style: italic;
+    line-height: 1.75;
+    text-align: justify;
 }
 
 /* add movie form */
@@ -56,8 +71,11 @@ body {
 .add_movie_form label, .details_form label {
     font-weight: 400;
     letter-spacing: 0.05rem;
-    color: #a69412;
+    color: #2c8691;
     text-transform: uppercase;
+}
+.add_movie_form .new_actor label, .add_movie_form .new_producer label {
+    margin-bottom: 2rem;
 }
 
 .add_movie_form .form-group {
@@ -109,14 +127,57 @@ body {
     height: auto;
 }
 
-.actor_chip_holder, .producer_chip_holder, .basic_details .actors .list {
-    display: flex;
-}
-
 .chip {
     color: white;
     margin: 1rem 1rem 1rem 0rem;
     padding: 0.6rem 2rem;
-    background-color: #ddd624;
+    background-color: #009cff;
     border-radius: 2rem;
+    display: inline-block;
 }
+
+.chip.actor {
+    background-color: orange;
+    padding: 0.5rem 1.5rem;
+    font-size: 1.35rem;
+}
+
+.chip.producer {
+    background-color: blueviolet;
+    padding: 0.5rem 1.5rem;
+    font-size: 1.35rem;
+}
+
+.header {
+    font-size: 3rem;
+    margin-top: 4rem;
+}
+
+.btn {
+    letter-spacing: 0.1rem;
+    background-color: #009cff;
+    color: white;
+    width: 12rem;
+    outline: none;
+}
+
+.btn:hover {
+    color: white !important;
+}
+
+.movie_form_page {
+    box-shadow: 0px 0px 2px 2px rgba(0,0,0,0.1);
+}
+
+.add_movie_form .note {
+    font-size: 1.5rem;
+    font-style: italic;
+}
+
+.add_movie_form .note .header {
+    font-size: 1.6rem;
+    color: coral;
+    font-style: normal;
+    text-decoration: underline;
+}
+

@@ -31,7 +31,7 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-app.get('/add-movie', function (req, res) {
+app.get('/add-update-movie', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'add_movie.html'));
 });
 

@@ -18,11 +18,15 @@ $(function () {
         localStorage.removeItem("movie_details");
         console.log(main_form_details);
         image_decoded_val = main_form_details.image;
+        $(".form_type").html("Add");
+        $(".add_movie_form .note").removeClass("hidden");
         request_type = 1; // update an existing movie
         prefill_data();
       }
       else {
         image_decoded_val = "default_image";
+        $(".form_type").html("Add");
+        $(".add_movie_form .note").addClass("hidden");
       }
     });
   });
