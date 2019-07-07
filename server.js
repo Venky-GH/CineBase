@@ -117,46 +117,50 @@ app.post('/add_movie_details', function (req, response) {
   var actor = form_details.actor;
   var producer_details = form_details.producer;
 
-  (async () => {
-    const client = await pool.connect();
+  if (form_details.request_type == 2) {
+    (async () => {
+      const client = await pool.connect();
 
-    try {
-      await client.query('BEGIN');
-      const { rows } = await client.query('INSERT INTO movie(name, image, plot, yor) VALUES($1, $2, $3, $4) RETURNING movie_id', [form_details.name, form_details.image, form_details.plot, form_details.yor]);
-      var movie_id = parseInt(rows[0].movie_id);
+      try {
+        await client.query('BEGIN');
+        const { rows } = await client.query('INSERT INTO movie(name, image, plot, yor) VALUES($1, $2, $3, $4) RETURNING movie_id', [form_details.name, form_details.image, form_details.plot, form_details.yor]);
+        var movie_id = parseInt(rows[0].movie_id);
 
-      if (actor.mode == 1) {
-        var ids = actor.details.ids;
-        await Promise.all(ids.map(async (value) => {
-          await client.query('INSERT INTO "actor-movie"(actor_id, movie_id) VALUES($1, $2)', [parseInt(value), movie_id]);
-        }));
-      }
-      else {
-        for (var [key, value] of iterate_object(actor.details)) {
-          let { rows } = await client.query('INSERT INTO actor(name, sex, dob, bio) VALUES($1, $2, $3, $4) RETURNING actor_id', [value.name, value.sex, value.dob, value.bio]);
-          let actorID = parseInt(rows[0].actor_id);
-          await client.query('INSERT INTO "actor-movie"(actor_id, movie_id) VALUES($1, $2)', [parseInt(actorID), movie_id]);
+        if (actor.mode == 1) {
+          var ids = actor.details.ids;
+          await Promise.all(ids.map(async (value) => {
+            await client.query('INSERT INTO "actor-movie"(actor_id, movie_id) VALUES($1, $2)', [parseInt(value), movie_id]);
+          }));
         }
+        else {
+          for (var [key, value] of iterate_object(actor.details)) {
+            let { rows } = await client.query('INSERT INTO actor(name, sex, dob, bio) VALUES($1, $2, $3, $4) RETURNING actor_id', [value.name, value.sex, value.dob, value.bio]);
+            let actorID = parseInt(rows[0].actor_id);
+            await client.query('INSERT INTO "actor-movie"(actor_id, movie_id) VALUES($1, $2)', [parseInt(actorID), movie_id]);
+          }
+        }
+        if (producer_details.mode == 1) {
+          await client.query('INSERT INTO "movie-producer"(movie_id, producer_id) VALUES($1, $2)', [movie_id, parseInt(producer_details.id)]);
+        }
+        else {
+          let { rows } = await client.query('INSERT INTO producer(name, sex, dob, bio) VALUES($1, $2, $3, $4) RETURNING producer_id', [producer_details.name, producer_details.sex, producer_details.dob, producer_details.bio]);
+          let producerID = parseInt(rows[0].producer_id);
+          await client.query('INSERT INTO "movie-producer"(movie_id, producer_id) VALUES($1, $2)', [movie_id, producerID]);
+        }
+        await client.query('COMMIT');
+        response.status(200).send({"status" : 1});
+      } catch (e) {
+        await client.query('ROLLBACK');
+        response.status(500).send({"status" : 0});
+        throw e;
+      } finally {
+        client.release();
       }
-      if (producer_details.mode == 1) {
-        await client.query('INSERT INTO "movie-producer"(movie_id, producer_id) VALUES($1, $2)', [movie_id, parseInt(producer_details.id)]);
-      }
-      else {
-        let { rows } = await client.query('INSERT INTO producer(name, sex, dob, bio) VALUES($1, $2, $3, $4) RETURNING producer_id', [producer_details.name, producer_details.sex, producer_details.dob, producer_details.bio]);
-        let producerID = parseInt(rows[0].producer_id);
-        await client.query('INSERT INTO "movie-producer"(movie_id, producer_id) VALUES($1, $2)', [movie_id, producerID]);
-      }
-      await client.query('COMMIT');
-      response.status(200).send({"status" : 1});
-    } catch (e) {
-      await client.query('ROLLBACK');
-      response.status(500).send({"status" : 0});
-      throw e;
-    } finally {
-      client.release();
-    }
-  })().catch(e => console.error(e.stack))
-
+    })().catch(e => console.error(e.stack))
+  }
+  else {
+    
+  }
 });
 
 app.post('/rename', function (req, res) {
