@@ -6,6 +6,9 @@ var image_decoded_val;
 var request_type = 2; // create new move
 
 $(function () {
+  $("#loader").removeClass("hidden");
+  $("#rest_body").addClass("hidden");
+
   $("#d_dob").datetimepicker({
     'format': 'YYYY-MM-DD'
   });
@@ -30,6 +33,8 @@ $(function () {
         $(".form_type").html("Add");
         $(".add_movie_form .note").addClass("hidden");
       }
+      $("#loader").addClass("hidden");
+      $("#rest_body").removeClass("hidden");
     });
   });
 });
@@ -89,14 +94,15 @@ function setEventListeners() {
 
   // image upload event
   $("#image_file").change(function (e) {
-    var extension = e.target.value.split(".")[1];
+    var name_splits = e.target.value.split(".");
+    var extension = name_splits[name_splits.length - 1];
     var allowed_extensions = ["jpg", "jpeg", "png", "gif"];
     if (!allowed_extensions.includes(extension)) {
-      alert("File type not allowed!");
+      show_toast(0, "File type not allowed!", "");
       $(this).val("");
     } else {
       if (e.target.files[0].size > 2000000) {
-        alert("File size exceeded!");
+        show_toast(0, "File size exceeded!", "File size limit is 2 MB.");
         $(this).val("");
       } else
         getBase64(e.target.files[0]);
@@ -121,7 +127,7 @@ function setEventListeners() {
       actor_obj.dob = dob;
       actor_obj.bio = bio;
       if (actor.details[name] !== undefined)
-        alert("Actor already exists!");
+        show_toast(2, "Actor already exists!", "");
       else
         actor.details[name] = actor_obj;
       update_chips("actor");
@@ -132,6 +138,7 @@ function setEventListeners() {
       producer.bio = bio;
       update_chips("producer");
     }
+    show_toast(1, "Added Successfully!", "");
     $("#details_modal").modal('toggle');
     $(this)[0].reset();
   });
@@ -172,8 +179,7 @@ function setEventListeners() {
     }
 
     if (f1 === 0) {
-      alert("Please select/add at least one actor!");
-      return false;
+      show_toast(2, "Please select/add at least one actor!", "");
     }
 
     // producer check
@@ -188,8 +194,7 @@ function setEventListeners() {
     }
 
     if (f2 === 0) {
-      alert("Select/Add one producer!");
-      return false;
+      show_toast(2, "Select/Add one producer!", "");
     }
 
     // year of release check
@@ -197,8 +202,7 @@ function setEventListeners() {
     f3 = check_number(year, 4);
 
     if (f3 === 0) {
-      alert("Please enter a valid year!");
-      return false;
+      show_toast(2, "Please enter a valid year!", "");
     }
 
     if (f1 && f2 && f3) {
@@ -232,12 +236,15 @@ function setEventListeners() {
         success: function (json) {
           if (json.status === 1) {
             var msg = (request_type === 1) ? "Updated!" : "Added!";
-            alert("Successfully " + msg);
-            location.href = "/";
+            show_toast(1, "Successfully " + msg, "");
+            setTimeout(function () {
+              location.href = "/";
+            }, 2500);
           }
         },
         error: function (err) {
-          console.log("something went wrong!");
+          console.log("something went wrong! Please try again.");
+          show_toast(0, "Something went wrong!", "Please try again.");
         }
       });
     }
@@ -288,6 +295,7 @@ function populate_actors() {
       },
       error: function (err) {
         console.log("something went wrong!");
+        show_toast(0, "Something went wrong!", "Please try again.");
         reject(err);
       }
     });
@@ -326,7 +334,8 @@ function populate_producers() {
       },
       error: function (err) {
         console.log("something went wrong!");
-        reject(json);
+        show_toast(0, "Something went wrong!", "Please try again.");
+        reject(err);
       }
     });
   });

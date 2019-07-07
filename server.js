@@ -3,8 +3,6 @@ let morgan = require('morgan');
 let path = require('path');
 let Pool = require('pg').Pool;
 let bodyParser = require('body-parser');
-let getBootstrapNode = require('bootstrap-node');
-let bootstrapNode = getBootstrapNode();
 
 // bodyParser = {
 //   json: {limit: '50mb', extended: true},

@@ -7,6 +7,8 @@ var producer = {};
 producer.mode = 1;
 
 $(function () {
+  $("#loader").removeClass("hidden");
+  $("#rest_body").addClass("hidden");
   list_movies_details();
 });
 
@@ -47,6 +49,8 @@ function list_movies_details() {
           $(".movie_details_holder").append(movie_detail_block);
         });
         setEventListeners();
+        $("#loader").addClass("hidden");
+        $("#rest_body").removeClass("hidden");
       }
     },
     error: function (err) {
