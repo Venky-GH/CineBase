@@ -1,0 +1,122 @@
+body {
+    font-family: 'Roboto', sans-serif !important;
+}
+
+.movie_details_holder {
+    padding: 5rem;
+    box-shadow: 0px 5px 5px rgba(0,0,0,0.2);
+}
+
+.movie_detail_block {
+    padding: 3rem 3rem;
+    margin: 2rem 0rem;
+    border: 1px solid #ddf;
+}
+
+.movie_detail_block .image img {
+    width: 100%;
+}
+
+.basic_details .movie_name {
+    font-size: 4rem;
+}
+
+.basic_details .info {
+    color: #707070;
+}
+
+.basic_details .actors {
+    font-size: 1.5rem;
+}
+
+.basic_details .producer {
+    font-size: 2rem;
+}
+
+.basic_details .yor {
+    font-size: 3rem;
+}
+
+.movie_detail_block .plot {
+    margin: 3rem 0rem;
+    font-size: 1.7rem;
+    line-height: 1.5;
+}
+
+/* add movie form */
+
+.add_movie_form {
+    margin: 5rem 20rem;
+}
+
+.details_form {
+    margin-top: -1rem;
+}
+
+.add_movie_form label, .details_form label {
+    font-weight: 400;
+    letter-spacing: 0.05rem;
+    color: #a69412;
+    text-transform: uppercase;
+}
+
+.add_movie_form .form-group {
+    margin: 3rem 0rem;
+}
+
+.details_form .form-group {
+    margin: 2rem 0rem;
+}
+
+.add_movie_form .form-control, .details_form .form-control {
+    height: 40px;
+    border-radius: 2px;
+    margin: 1rem 0rem;
+}
+
+.add_movie_form .form-control.file_type {
+    padding: 0.8rem;
+}
+
+.add_movie_form .form-control.multiselect-search {
+    height: 34px;
+    margin: auto;
+}
+
+.add_movie_form .multiselect-item .input-group-btn {
+    display: none;
+}
+
+.add_movie_form .multiselect.btn {
+    height: 40px;
+    border-radius: 2px;
+    margin: 1rem 0rem;
+}
+
+.add_movie_form input[type=radio], .details_form input[type=radio] {
+    margin: 1rem;
+}
+
+.add_movie_form .option input[type=radio] {
+    position: relative;
+}
+
+.add_movie_form .option.active label {
+    color: white;
+}
+
+.add_movie_form textarea.form-control, .details_form textarea.form-control {
+    height: auto;
+}
+
+.actor_chip_holder, .producer_chip_holder, .basic_details .actors .list {
+    display: flex;
+}
+
+.chip {
+    color: white;
+    margin: 1rem 1rem 1rem 0rem;
+    padding: 0.6rem 2rem;
+    background-color: #ddd624;
+    border-radius: 2rem;
+}

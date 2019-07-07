@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Movie</title>
+    <link rel="stylesheet" href="/css/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/bootstrap-multiselect.css">
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        Add New Movie
+    </div>
+    <form class="add_movie_form" id="add_movie_form">
+        <div class="form-group">
+            <label>Name*</label>
+            <input type="text" class="form-control" name="name" id="m_name" placeholder="Eg: The Expendables" required>
+        </div>
+        <div class="form-group">
+            <label>Image*</label>
+            <input type="file" class="form-control file_type" id="image_file" name="image" required>
+        </div>
+        <div class="form-group">
+            <label>Select/Add Actors</label> <br>
+            <input type="radio" name="actor_type" value="1"> Select Existing Actors <br>
+            <input type="radio" name="actor_type" value="2"> Add New Actors <br>
+        </div>
+        <div class="form-group existing_actor hidden">
+            <label>Select Existing Actors*</label>
+            <select id="actor_list" multiple="multiple"></select>
+        </div>
+        <div class="form-group new_actor hidden">
+            <label>Add new actor</label>
+            <div class="actor_chip_holder">
+
+            </div>
+            <br>
+            <button type="button" id="add_actor" class="btn" data-toggle="modal" data-target="#details_modal">Add Actor</button>
+        </div>
+        <div class="form-group">
+            <label>Select/Add Producer*</label> <br>
+            <input type="radio" name="producer_type" value="1"> Select Existing Producer <br>
+            <input type="radio" name="producer_type" value="2"> Add New Producer <br>
+        </div>
+        <div class="form-group existing_producer hidden">
+            <label>Select Existing Producer</label>
+            <select id="producer_list"></select>
+        </div>
+        <div class="form-group new_producer hidden">
+            <label>Add new producer</label>
+            <div class="producer_chip_holder">
+
+            </div>
+            <br>
+            <button type="button" id="add_producer" class="btn" data-toggle="modal" data-target="#details_modal">Add Producer</button>
+        </div>
+        <div class="form-group">
+            <label>Year of Release</label>
+            <input type="text" class="form-control" name="yor" id="m_yor" placeholder="Eg: 2001">
+        </div>
+        <div class="form-group">
+            <label>Plot</label>
+            <textarea name="plot" id="m_plot" class="form-control" rows="5"></textarea>
+        </div>
+        <input type="submit" class="btn" value="Submit">
+    </form>
+</div>
+
+<div id="details_modal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Add <span class="new_user_type"></span> Details</h4>
+            </div>
+            <div class="modal-body">
+                <form class="details_form">
+                    <div class="form-group">
+                        <label>Name*</label>
+                        <input type="text" class="form-control" name="name" id="d_name" placeholder="Eg: Tom Cruise" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Sex*</label> <br>
+                        <input type="radio" name="sex" value="Male" required> Male <br>
+                        <input type="radio" name="sex" value="Female" required> Female <br>
+                    </div>
+                    <div class="form-group">
+                        <label>Date of Birth*</label>
+                        <input type="text" class="form-control" id="d_dob" name="dob" placeholder="Format: YYYY-MM-DD" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Bio*</label>
+                        <textarea name="bio" class="form-control" id="d_bio" rows="10" placeholder="Type in the biography" required></textarea>
+                    </div>
+                    <input type="submit" class="btn" value="SUBMIT">
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- cloners -->
+<option class="option_clone hidden"></option>
+
+<div class="chip_clone hidden"></div>
+
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="/js/bootstrap-multiselect.js"></script>
+<script src="/js/add_movie.js" type="text/javascript"></script>
+</html>
