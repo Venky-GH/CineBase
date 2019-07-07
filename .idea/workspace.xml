@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ded772b7-d61b-4db8-9921-2077d8449456" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/ui/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CineBase(Definition + Data).sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CineBase(Definition).sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/ui/js/main.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -30,8 +30,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="227">
-              <caret line="116" column="16" selection-start-line="116" selection-start-column="6" selection-end-line="116" selection-end-column="16" />
+            <state relative-caret-position="467">
+              <caret line="197" column="3" selection-start-line="197" selection-start-column="3" selection-end-line="197" selection-end-column="3" />
             </state>
           </provider>
         </entry>
@@ -51,13 +51,13 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ui/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="253">
-              <caret line="13" selection-start-line="13" selection-end-line="13" />
+            <state relative-caret-position="-761">
+              <caret line="6" column="65" lean-forward="true" selection-start-line="6" selection-start-column="65" selection-end-line="6" selection-end-column="65" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ui/css/main.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="504">
@@ -66,15 +66,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ui/js/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-255">
-              <caret line="9" column="2" selection-start-line="9" selection-start-column="2" selection-end-line="10" selection-end-column="37" />
-              <folding>
-                <element signature="e#669887#669938#0" />
-                <element signature="e#1934#2053#0" />
-              </folding>
+            <state relative-caret-position="1288">
+              <caret line="56" column="17" selection-start-line="56" selection-start-column="6" selection-end-line="56" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -82,11 +78,16 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ui/js/add_movie.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3404">
-              <caret line="340" column="5" selection-start-line="340" selection-start-column="5" selection-end-line="340" selection-end-column="5" />
+            <state relative-caret-position="343">
+              <caret line="246" selection-start-line="246" selection-end-line="247" />
               <folding>
+                <element signature="e#121#193#0" />
                 <element signature="e#193#225#0" />
+                <element signature="e#232#242#0" />
+                <element signature="e#323#337#0" />
                 <element signature="e#410#642#0" />
+                <element signature="e#686#704#0" />
+                <element signature="n#!!block;n#prefill_data#0" />
                 <element signature="e#267#403#0" />
                 <element signature="e#443#573#0" />
                 <element signature="e#628#1072#0" />
@@ -99,21 +100,21 @@
                 <element signature="e#1823#1892#0" />
                 <element signature="e#1902#2074#0" />
                 <element signature="e#1947#2019#0" />
+                <element signature="e#3476#4340#0" />
                 <element signature="e#3785#4094#0" />
                 <element signature="e#4100#4245#0" />
                 <element signature="e#4458#4490#0" />
-                <element signature="e#4736#4750#0" />
                 <element signature="e#4773#4791#0" />
                 <element signature="e#4824#4846#0" />
                 <element signature="e#4803#4821#0" />
                 <element signature="e#4917#4939#0" />
-                <element signature="e#4760#4774#0" />
+                <element signature="e#5119#5133#0" />
                 <element signature="e#5361#5375#0" />
                 <element signature="e#5401#5419#0" />
                 <element signature="e#5385#5405#0" />
+                <element signature="e#5639#5653#0" />
                 <element signature="e#5437#5535#0" />
                 <element signature="e#5604#5658#0" />
-                <element signature="e#5767#6250#0" />
                 <element signature="e#6003#6151#0" />
                 <element signature="e#7138#7168#0" />
                 <element signature="e#7094#7260#0" />
@@ -128,11 +129,16 @@
                 <element signature="e#5032#5573#0" />
                 <element signature="e#5082#5332#0" />
                 <element signature="e#5362#5563#0" />
+                <element signature="e#5607#5658#0" />
+                <element signature="n#!!block;n#populate_producers#0" />
+                <element signature="e#5833#5843#0" />
+                <element signature="e#5863#6718#0" />
                 <element signature="e#5938#5959#0" />
                 <element signature="e#5990#6635#0" />
                 <element signature="e#6083#6629#0" />
                 <element signature="e#6133#6386#0" />
                 <element signature="e#6416#6619#0" />
+                <element signature="e#6663#6714#0" />
                 <element signature="n#!!block;n#getBase64#0" />
                 <element signature="e#5950#5994#0" />
                 <element signature="e#6032#6072#0" />
@@ -191,6 +197,7 @@
       <find>res.status</find>
       <find>(err)</find>
       <find>.add_movie_form .multiselect.btn</find>
+      <find>console.log</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -202,18 +209,19 @@
         <option value="$PROJECT_DIR$/ui/home.html" />
         <option value="$PROJECT_DIR$/ui/test.html" />
         <option value="$PROJECT_DIR$/ui/js/moment.js" />
-        <option value="$PROJECT_DIR$/server.js" />
-        <option value="$PROJECT_DIR$/ui/js/main.js" />
         <option value="$PROJECT_DIR$/ui/index.html" />
         <option value="$PROJECT_DIR$/ui/add_movie.html" />
         <option value="$PROJECT_DIR$/ui/css/loader.css" />
         <option value="$PROJECT_DIR$/ui/js/common.js" />
         <option value="$PROJECT_DIR$/ui/js/add_movie.js" />
         <option value="$PROJECT_DIR$/ui/css/main.css" />
+        <option value="$PROJECT_DIR$/readme.md" />
+        <option value="$PROJECT_DIR$/server.js" />
+        <option value="$PROJECT_DIR$/ui/js/main.js" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="505" />
     <option name="y" value="80" />
     <option name="width" value="1040" />
@@ -232,23 +240,6 @@
             <path>
               <item name="IMDB" type="b2602c69:ProjectViewProjectNode" />
               <item name="IMDB" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="IMDB" type="b2602c69:ProjectViewProjectNode" />
-              <item name="IMDB" type="462c0819:PsiDirectoryNode" />
-              <item name="ui" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="IMDB" type="b2602c69:ProjectViewProjectNode" />
-              <item name="IMDB" type="462c0819:PsiDirectoryNode" />
-              <item name="ui" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="IMDB" type="b2602c69:ProjectViewProjectNode" />
-              <item name="IMDB" type="462c0819:PsiDirectoryNode" />
-              <item name="ui" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -289,18 +280,18 @@
       <updated>1562233593713</updated>
       <workItem from="1562233598262" duration="22229000" />
       <workItem from="1562327782024" duration="27735000" />
-      <workItem from="1562419527996" duration="56889000" />
+      <workItem from="1562419527996" duration="65092000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="106853000" />
+    <option name="totallyTimeSpent" value="115056000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="7" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19497687" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19497687" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -345,31 +336,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ui/add_movie.html">
+    <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="529">
-          <caret line="23" column="44" selection-start-line="23" selection-start-column="44" selection-end-line="23" selection-end-column="44" />
-          <folding>
-            <element signature="n#div#1;n#body#0;n#html#0;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
-          <caret line="116" column="16" selection-start-line="116" selection-start-column="6" selection-end-line="116" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ui/js/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-255">
-          <caret line="9" column="2" selection-start-line="9" selection-start-column="2" selection-end-line="10" selection-end-column="37" />
-          <folding>
-            <element signature="e#669887#669938#0" />
-            <element signature="e#1934#2053#0" />
-          </folding>
+        <state relative-caret-position="506">
+          <caret line="22" column="1" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
         </state>
       </provider>
     </entry>
@@ -382,18 +352,50 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ui/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="13" selection-start-line="13" selection-end-line="13" />
+        <state relative-caret-position="-761">
+          <caret line="6" column="65" lean-forward="true" selection-start-line="6" selection-start-column="65" selection-end-line="6" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/readme.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="120">
+            <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="467">
+          <caret line="197" column="3" selection-start-line="197" selection-start-column="3" selection-end-line="197" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ui/add_movie.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="529">
+          <caret line="23" column="44" selection-start-line="23" selection-start-column="44" selection-end-line="23" selection-end-column="44" />
+          <folding>
+            <element signature="n#div#1;n#body#0;n#html#0;n#!!top" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ui/js/add_movie.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3404">
-          <caret line="340" column="5" selection-start-line="340" selection-start-column="5" selection-end-line="340" selection-end-column="5" />
+        <state relative-caret-position="343">
+          <caret line="246" selection-start-line="246" selection-end-line="247" />
           <folding>
+            <element signature="e#121#193#0" />
             <element signature="e#193#225#0" />
+            <element signature="e#232#242#0" />
+            <element signature="e#323#337#0" />
             <element signature="e#410#642#0" />
+            <element signature="e#686#704#0" />
+            <element signature="n#!!block;n#prefill_data#0" />
             <element signature="e#267#403#0" />
             <element signature="e#443#573#0" />
             <element signature="e#628#1072#0" />
@@ -406,21 +408,21 @@
             <element signature="e#1823#1892#0" />
             <element signature="e#1902#2074#0" />
             <element signature="e#1947#2019#0" />
+            <element signature="e#3476#4340#0" />
             <element signature="e#3785#4094#0" />
             <element signature="e#4100#4245#0" />
             <element signature="e#4458#4490#0" />
-            <element signature="e#4736#4750#0" />
             <element signature="e#4773#4791#0" />
             <element signature="e#4824#4846#0" />
             <element signature="e#4803#4821#0" />
             <element signature="e#4917#4939#0" />
-            <element signature="e#4760#4774#0" />
+            <element signature="e#5119#5133#0" />
             <element signature="e#5361#5375#0" />
             <element signature="e#5401#5419#0" />
             <element signature="e#5385#5405#0" />
+            <element signature="e#5639#5653#0" />
             <element signature="e#5437#5535#0" />
             <element signature="e#5604#5658#0" />
-            <element signature="e#5767#6250#0" />
             <element signature="e#6003#6151#0" />
             <element signature="e#7138#7168#0" />
             <element signature="e#7094#7260#0" />
@@ -435,11 +437,16 @@
             <element signature="e#5032#5573#0" />
             <element signature="e#5082#5332#0" />
             <element signature="e#5362#5563#0" />
+            <element signature="e#5607#5658#0" />
+            <element signature="n#!!block;n#populate_producers#0" />
+            <element signature="e#5833#5843#0" />
+            <element signature="e#5863#6718#0" />
             <element signature="e#5938#5959#0" />
             <element signature="e#5990#6635#0" />
             <element signature="e#6083#6629#0" />
             <element signature="e#6133#6386#0" />
             <element signature="e#6416#6619#0" />
+            <element signature="e#6663#6714#0" />
             <element signature="n#!!block;n#getBase64#0" />
             <element signature="e#5950#5994#0" />
             <element signature="e#6032#6072#0" />
@@ -454,17 +461,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="506">
-          <caret line="22" column="1" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ui/css/main.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="504">
           <caret line="114" column="29" selection-start-line="114" selection-start-column="29" selection-end-line="114" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ui/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1288">
+          <caret line="56" column="17" selection-start-line="56" selection-start-column="6" selection-end-line="56" selection-end-column="17" />
         </state>
       </provider>
     </entry>

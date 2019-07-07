@@ -55,6 +55,7 @@ function list_movies_details() {
     },
     error: function (err) {
       console.log("something went wrong!");
+      show_toast(0, "Something went wrong!", "Please try again.");
     }
   });
 }
@@ -66,7 +67,7 @@ function setEventListeners() {
   $(".edit_movie").click(function () {
     let movie_detail_block = $(this).parents(".movie_detail_block");
     main_form_details.id = movie_detail_block.attr("id");
-    console.log(main_form_details.id);
+
     // get movie details
     $.ajax({
       url: '/list_items',
@@ -91,7 +92,6 @@ function setEventListeners() {
             producer.id = value.producer.split("+")[1];
             main_form_details.actor = actor;
             main_form_details.producer = producer;
-            console.log(main_form_details);
             localStorage.setItem("movie_details", JSON.stringify(main_form_details));
 
             // redirect to add-movie screen with all the data
@@ -100,7 +100,8 @@ function setEventListeners() {
         }
       },
       error: function (err) {
-        console.log("something went wrong!");
+        console.log("Something went wrong!");
+        show_toast(0, "Something went wrong!", "Please try again.");
       }
     });
   });

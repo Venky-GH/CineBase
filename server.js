@@ -4,16 +4,11 @@ let path = require('path');
 let Pool = require('pg').Pool;
 let bodyParser = require('body-parser');
 
-// bodyParser = {
-//   json: {limit: '50mb', extended: true},
-//   urlencoded: {limit: '50mb', extended: true}
-// };
-
 let config = {
-  user: 'postgres',
-  database: 'My IMDB',
-  host: 'localhost',
-  password: 'abcd@123456'
+  user: 'username',
+  database: 'database_name',
+  host: 'host_name',
+  password: 'password'
 };
 
 let app = express();
@@ -201,11 +196,3 @@ app.post('/rename', function (req, res) {
 app.listen(9090, function () {
   console.log('App listening on port 9090!');
 });
-
-
-/*
-INSERT INTO
-  yourtable
-VALUES
-  ((SELECT userid FROM users WHERE username='Kenny'),(SELECT foodid FROM food WHERE food='apple'))
- */
