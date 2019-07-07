@@ -17,8 +17,12 @@ $(function () {
         main_form_details = JSON.parse(localStorage.getItem("movie_details"));
         localStorage.removeItem("movie_details");
         console.log(main_form_details);
+        image_decoded_val = main_form_details.image;
         request_type = 1; // update an existing movie
         prefill_data();
+      }
+      else {
+        image_decoded_val = "default_image";
       }
     });
   });
@@ -26,7 +30,6 @@ $(function () {
 
 function prefill_data() {
   $("#m_name").val(main_form_details.name);
-  // $("#image_file").val(main_form_details.image);
   $("#m_yor").val(main_form_details.yor);
   $("#m_plot").val(main_form_details.plot);
   $("input[name='actor_type'][value='1']").click();
@@ -158,14 +161,16 @@ function setEventListeners() {
     main_form_details.request_type = request_type;
 
     $.ajax({
-      url: "/add_movie_details",
+      url: "/add_update_movie_details",
       type: "POST",
       dataType: "json",
       contentType: "application/json",
       data: JSON.stringify(main_form_details),
       success: function (json) {
         if (json.status === 1) {
-          alert("Successfully added!");
+          var msg = (request_type === 1) ? "Updated!" : "Added!";
+          alert("Successfully " + msg);
+          location.href = "/";
         }
       },
       error: function (err) {
@@ -179,7 +184,7 @@ function populate_actors() {
   return new Promise(function (resolve, reject) {
     $.ajax({
       url: '/list_items',
-      type: "get",
+      type: "GET",
       dataType: "json",
       data: {
         type: 2
@@ -217,7 +222,7 @@ function populate_producers() {
   return new Promise(function (resolve, reject) {
     $.ajax({
       url: '/list_items',
-      type: "get",
+      type: "GET",
       dataType: "json",
       data: {
         type: 3

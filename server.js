@@ -47,6 +47,10 @@ app.get('/js/:fileName', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'js', req.params.fileName));
 });
 
+app.get('/images/:fileName', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'images', req.params.fileName));
+});
+
 function* iterate_object(o) {
   var keys = Object.keys(o);
   for (var i=0; i<keys.length; i++) {
@@ -55,20 +59,26 @@ function* iterate_object(o) {
 }
 
 /* List Movies, actors, producers
-movie details - 1,
+all movie details - 1,
 actor - 2,
 producer - 3
+specific movie details - 4
 */
 app.get('/list_items', function (req, res) {
   var fetch_type = req.query.type;
   var query;
+  var params = [];
   if (fetch_type == 1)
     query = 'SELECT * FROM "master-view"';
   else if (fetch_type == 2)
     query = 'SELECT * FROM "actor"';
-  else
+  else if (fetch_type == 3)
     query = 'SELECT * FROM "producer"';
-  pool.query(query, function (err, result) {
+  else {
+    query = 'SELECT * FROM "master-view" WHERE movie_id = $1';
+    params = [req.query.movie_id];
+  }
+  pool.query(query, params, function (err, result) {
     if (err) {
       console.log("kuch toh gadbad hai!");
       res.status(500).send(err.toString());
@@ -112,19 +122,29 @@ app.post('/add_actor_producer', function (req, res) {
 });
 
 // add movie (all constraints)
-app.post('/add_movie_details', function (req, response) {
+app.post('/add_update_movie_details', function (req, response) {
   var form_details = req.body;
   var actor = form_details.actor;
   var producer_details = form_details.producer;
 
-  if (form_details.request_type == 2) {
-    (async () => {
+  (async () => {
       const client = await pool.connect();
 
       try {
+        var movie_id;
         await client.query('BEGIN');
-        const { rows } = await client.query('INSERT INTO movie(name, image, plot, yor) VALUES($1, $2, $3, $4) RETURNING movie_id', [form_details.name, form_details.image, form_details.plot, form_details.yor]);
-        var movie_id = parseInt(rows[0].movie_id);
+        if (form_details.request_type == 2) {
+          const { rows } = await client.query('INSERT INTO movie(name, image, plot, yor) VALUES($1, $2, $3, $4) RETURNING movie_id', [form_details.name, form_details.image, form_details.plot, form_details.yor]);
+          movie_id = parseInt(rows[0].movie_id);
+        }
+        else {
+          movie_id = parseInt(form_details.id);
+          await client.query('UPDATE movie SET name = $1, image = $2, plot = $3, yor = $4 WHERE movie_id = $5', [form_details.name, form_details.image, form_details.plot, form_details.yor, movie_id]);
+
+          // delete entries of this movie from actor-movie and movie-producer tables
+          await client.query('DELETE FROM "actor-movie" WHERE movie_id = $1', [movie_id]);
+          await client.query('DELETE FROM "movie-producer" WHERE movie_id = $1', [movie_id]);
+        }
 
         if (actor.mode == 1) {
           var ids = actor.details.ids;
@@ -157,10 +177,6 @@ app.post('/add_movie_details', function (req, response) {
         client.release();
       }
     })().catch(e => console.error(e.stack))
-  }
-  else {
-    
-  }
 });
 
 app.post('/rename', function (req, res) {

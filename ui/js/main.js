@@ -25,7 +25,10 @@ function list_movies_details() {
           var movie_detail_block = $(".movie_detail_block_clone").clone();
           movie_detail_block.removeClass("movie_detail_block_clone hidden").addClass("movie_detail_block");
           movie_detail_block.attr("id", value.movie_id);
-          movie_detail_block.find(".image img").attr("src", value.image);
+          if (value.image !== "default_image")
+            movie_detail_block.find(".image img").attr("src", value.image);
+          else
+            movie_detail_block.find(".image img").attr("src", "/images/default_image.jpg");
           movie_detail_block.find(".basic_details .movie_name").html(value.name);
           var actors_info_list = value.actors.split(", ");
           $.each(actors_info_list, function (key, value) {
@@ -56,20 +59,42 @@ function setEventListeners() {
   $(".edit_movie").click(function () {
     let movie_detail_block = $(this).parents(".movie_detail_block");
     main_form_details.id = movie_detail_block.attr("id");
-    main_form_details.name = movie_detail_block.find(".basic_details .movie_name").html();
-    main_form_details.plot = movie_detail_block.find(".plot").html();
-    main_form_details.yor = movie_detail_block.find(".basic_details .yor").html();
-    main_form_details.image = "random.jpg";
-    $.each(movie_detail_block.find(".actors .list .chip"), function (key, value) {
-      actor.details.ids.push(value.getAttribute("id"));
-    });
-    producer.id = movie_detail_block.find(".producer .name").attr("id");
-    main_form_details.actor = actor;
-    main_form_details.producer = producer;
-    console.log(main_form_details);
-    localStorage.setItem("movie_details", JSON.stringify(main_form_details));
+    console.log(main_form_details.id);
+    // get movie details
+    $.ajax({
+      url: '/list_items',
+      type: "GET",
+      dataType: "json",
+      data: {
+        type: 4,
+        movie_id: main_form_details.id
+      },
+      success: function (json) {
+        if (json.status === 1) {
+          $.each(json.list, function (key, value) {
+            main_form_details.name = value.name;
+            main_form_details.plot = value.plot;
+            main_form_details.yor = value.yor;
+            main_form_details.image = value.image;
+            var actors_info_list = value.actors.split(", ");
+            $.each(actors_info_list, function (key, value) {
+              var actor_info = value.split("+");
+              actor.details.ids.push(actor_info[1]);
+            });
+            producer.id = value.producer.split("+")[1];
+            main_form_details.actor = actor;
+            main_form_details.producer = producer;
+            console.log(main_form_details);
+            localStorage.setItem("movie_details", JSON.stringify(main_form_details));
 
-    // redirect to add-movie screen with all the data
-    location.href = "/add-movie?requestType=" + 1;
+            // redirect to add-movie screen with all the data
+            location.href = "/add-movie?requestType=" + 1;
+          });
+        }
+      },
+      error: function (err) {
+        console.log("something went wrong!");
+      }
+    });
   });
 }
