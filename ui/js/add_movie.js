@@ -6,6 +6,9 @@ var image_decoded_val;
 var request_type = 2; // create new move
 
 $(function () {
+  $("#d_dob").datetimepicker({
+    'format': 'YYYY-MM-DD'
+  });
   let promiseObj = populate_actors();
   promiseObj.then(function () {
     let inner_promise_obj = populate_producers();
@@ -13,17 +16,16 @@ $(function () {
       setEventListeners();
 
       var url = location.href;
-      if(url.indexOf("?") !== -1) {
+      if (url.indexOf("?") !== -1) {
         main_form_details = JSON.parse(localStorage.getItem("movie_details"));
         localStorage.removeItem("movie_details");
         console.log(main_form_details);
         image_decoded_val = main_form_details.image;
-        $(".form_type").html("Add");
+        $(".form_type").html("Update");
         $(".add_movie_form .note").removeClass("hidden");
         request_type = 1; // update an existing movie
         prefill_data();
-      }
-      else {
+      } else {
         image_decoded_val = "default_image";
         $(".form_type").html("Add");
         $(".add_movie_form .note").addClass("hidden");
@@ -64,8 +66,7 @@ function setEventListeners() {
       $(".add_movie_form .existing_actor").removeClass("hidden");
       $(".add_movie_form .new_actor").addClass("hidden");
       actor.mode = 1; // 1 - existing
-    }
-    else {
+    } else {
       $(".add_movie_form .existing_actor").addClass("hidden");
       $(".add_movie_form .new_actor").removeClass("hidden");
       actor.mode = 2; // 2 - New
@@ -79,8 +80,7 @@ function setEventListeners() {
       $(".add_movie_form .existing_producer").removeClass("hidden");
       $(".add_movie_form .new_producer").addClass("hidden");
       producer.mode = 1; // 1 - existing
-    }
-    else {
+    } else {
       $(".add_movie_form .existing_producer").addClass("hidden");
       $(".add_movie_form .new_producer").removeClass("hidden");
       producer.mode = 2; // 2 - New
@@ -94,13 +94,11 @@ function setEventListeners() {
     if (!allowed_extensions.includes(extension)) {
       alert("File type not allowed!");
       $(this).val("");
-    }
-    else {
-      if(e.target.files[0].size > 2000000) {
+    } else {
+      if (e.target.files[0].size > 2000000) {
         alert("File size exceeded!");
         $(this).val("");
-      }
-      else
+      } else
         getBase64(e.target.files[0]);
     }
   });
@@ -115,6 +113,7 @@ function setEventListeners() {
     var sex = $(".details_form input[name='sex']").val();
     var dob = $("#d_dob").val();
     var bio = $("#d_bio").val();
+
     if ($(this).attr("form_type") === "actor") {
       var actor_obj = {};
       actor_obj.name = name;
@@ -126,8 +125,7 @@ function setEventListeners() {
       else
         actor.details[name] = actor_obj;
       update_chips("actor");
-    }
-    else {
+    } else {
       producer.name = name;
       producer.sex = sex;
       producer.dob = dob;
@@ -143,45 +141,119 @@ function setEventListeners() {
     e.preventDefault();
     e.stopImmediatePropagation();
 
-    // get and set values
-    main_form_details.name = $("#m_name").val();
-    main_form_details.image = image_decoded_val;
-    main_form_details.yor = $("#m_yor").val();
-    main_form_details.plot = $("#m_plot").val();
+    // validation
+    /*
+    f1 - actors check
+    f2 - producers check
+    f3 - year of release check
+     */
+    let f1 = 1;
+    let f2 = 1;
+    let f3 = 1;
 
-    if (actor.mode === 1) {
-      // get the values from multiselect
-      actor.details.ids = $("#actor_list").val();
-    }
-
-    main_form_details.actor = actor;
-
-    if(producer.mode === 1) {
-      producer.id = $("#producer_list").val();
-    }
-
-    main_form_details.producer = producer;
-
-    main_form_details.request_type = request_type;
-
-    $.ajax({
-      url: "/add_update_movie_details",
-      type: "POST",
-      dataType: "json",
-      contentType: "application/json",
-      data: JSON.stringify(main_form_details),
-      success: function (json) {
-        if (json.status === 1) {
-          var msg = (request_type === 1) ? "Updated!" : "Added!";
-          alert("Successfully " + msg);
-          location.href = "/";
+    // actor check
+    let actor_checks = document.getElementsByName("actor_type");
+    if (actor_checks[0].checked || actor_checks[1].checked) {
+      if (actor_checks[0].checked) {
+        if ($("#actor_list").val().length === 0) {
+          f1 = 0;
         }
-      },
-      error: function (err) {
-        console.log("something went wrong!");
+      } else {
+        let count = 0;
+        $.each(actor.details, function (key, value) {
+          if (key !== "ids")
+            count++;
+        });
+        if (count < 1)
+          f1 = 0;
       }
-    });
+    } else {
+      f1 = 0;
+    }
+
+    if (f1 === 0) {
+      alert("Please select/add at least one actor!");
+      return false;
+    }
+
+    // producer check
+    let producer_checks = document.getElementsByName("producer_type");
+    if (producer_checks[0].checked || producer_checks[1].checked) {
+      if (producer_checks[1].checked) {
+        if (!(producer.hasOwnProperty("name") && producer.hasOwnProperty("dob") && producer.hasOwnProperty("sex") && producer.hasOwnProperty("bio")))
+          f2 = 0;
+      }
+    } else {
+      f2 = 0;
+    }
+
+    if (f2 === 0) {
+      alert("Select/Add one producer!");
+      return false;
+    }
+
+    // year of release check
+    let year = $("#m_yor").val();
+    f3 = check_number(year, 4);
+
+    if (f3 === 0) {
+      alert("Please enter a valid year!");
+      return false;
+    }
+
+    if (f1 && f2 && f3) {
+      // get and set values
+      main_form_details.name = $("#m_name").val();
+      main_form_details.image = image_decoded_val;
+      main_form_details.yor = $("#m_yor").val();
+      main_form_details.plot = $("#m_plot").val();
+
+      if (actor.mode === 1) {
+        // get the values from multiselect
+        actor.details.ids = $("#actor_list").val();
+      }
+
+      main_form_details.actor = actor;
+
+      if (producer.mode === 1) {
+        producer.id = $("#producer_list").val();
+      }
+
+      main_form_details.producer = producer;
+
+      main_form_details.request_type = request_type;
+
+      $.ajax({
+        url: "/add_update_movie_details",
+        type: "POST",
+        dataType: "json",
+        contentType: "application/json",
+        data: JSON.stringify(main_form_details),
+        success: function (json) {
+          if (json.status === 1) {
+            var msg = (request_type === 1) ? "Updated!" : "Added!";
+            alert("Successfully " + msg);
+            location.href = "/";
+          }
+        },
+        error: function (err) {
+          console.log("something went wrong!");
+        }
+      });
+    }
   });
+}
+
+function check_number(number, len) {
+  if (number.length === len) {
+    for (var i = 0; i < len; i++) {
+      if (("0123456789").indexOf(number[i]) === -1) {
+        return 0;
+      }
+    }
+  } else
+    return 0;
+  return 1;
 }
 
 function populate_actors() {
@@ -276,10 +348,10 @@ function update_chips(type) {
   var producer_chip_holder = $(".producer_chip_holder");
   actor_chip_holder.empty();
   producer_chip_holder.empty();
-  if(type === "actor") {
-    if(!actor.details.hasOwnProperty("ids")) {
+  if (type === "actor") {
+    if (!actor.details.hasOwnProperty("ids")) {
       $.each(actor.details, function (key, value) {
-        if(key !== "ids") {
+        if (key !== "ids") {
           var chip = $(".chip_clone").clone();
           chip.removeClass("chip_clone hidden").addClass("chip");
           chip.html(value.name);
@@ -288,9 +360,8 @@ function update_chips(type) {
       });
     }
     actor_chip_holder.removeClass("hidden");
-  }
-  else {
-    if(!producer.hasOwnProperty("id")) {
+  } else {
+    if (!producer.hasOwnProperty("id")) {
       var chip = $(".chip_clone").clone();
       chip.removeClass("chip_clone hidden").addClass("chip");
       chip.html(producer.name);
