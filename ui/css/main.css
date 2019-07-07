@@ -111,6 +111,10 @@ body {
     margin: 1rem 0rem;
 }
 
+.add_movie_form .multiselect.btn:hover {
+    background-color: #009cff;
+}
+
 .add_movie_form input[type=radio], .details_form input[type=radio] {
     margin: 1rem;
 }
