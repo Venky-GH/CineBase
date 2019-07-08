@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ded772b7-d61b-4db8-9921-2077d8449456" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/CineBase(Definition + Data).sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CineBase(Definition).sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/ui/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/add_movie.html" beforeDir="false" afterPath="$PROJECT_DIR$/ui/add_movie.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/ui/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/ui/index.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -21,8 +22,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="506">
-              <caret line="22" column="1" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
+            <state relative-caret-position="23">
+              <caret line="1" column="21" selection-start-line="1" selection-start-column="21" selection-end-line="1" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -30,8 +31,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="467">
-              <caret line="197" column="3" selection-start-line="197" selection-start-column="3" selection-end-line="197" selection-end-column="3" />
+            <state relative-caret-position="4416">
+              <caret line="192" column="48" selection-start-line="192" selection-start-column="48" selection-end-line="192" selection-end-column="48" />
             </state>
           </provider>
         </entry>
@@ -39,8 +40,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ui/add_movie.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="529">
-              <caret line="23" column="44" selection-start-line="23" selection-start-column="44" selection-end-line="23" selection-end-column="44" />
+            <state relative-caret-position="92">
+              <caret line="4" column="71" selection-start-line="4" selection-start-column="71" selection-end-line="4" selection-end-column="71" />
               <folding>
                 <element signature="n#div#1;n#body#0;n#html#0;n#!!top" />
               </folding>
@@ -51,26 +52,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ui/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-761">
-              <caret line="6" column="65" lean-forward="true" selection-start-line="6" selection-start-column="65" selection-end-line="6" selection-end-column="65" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ui/css/main.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="504">
-              <caret line="114" column="29" selection-start-line="114" selection-start-column="29" selection-end-line="114" selection-end-column="29" />
+            <state relative-caret-position="92">
+              <caret line="4" column="71" selection-start-line="4" selection-start-column="71" selection-end-line="4" selection-end-column="71" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/ui/css/main.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="226">
+              <caret line="20" column="26" selection-start-line="20" selection-start-column="26" selection-end-line="20" selection-end-column="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ui/js/main.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1288">
-              <caret line="56" column="17" selection-start-line="56" selection-start-column="6" selection-end-line="56" selection-end-column="17" />
+              <caret line="56" column="43" selection-start-line="56" selection-start-column="43" selection-end-line="56" selection-end-column="43" />
             </state>
           </provider>
         </entry>
@@ -78,77 +79,14 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ui/js/add_movie.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="343">
+            <state relative-caret-position="5382">
               <caret line="246" selection-start-line="246" selection-end-line="247" />
               <folding>
-                <element signature="e#121#193#0" />
-                <element signature="e#193#225#0" />
-                <element signature="e#232#242#0" />
-                <element signature="e#323#337#0" />
-                <element signature="e#410#642#0" />
-                <element signature="e#686#704#0" />
                 <element signature="n#!!block;n#prefill_data#0" />
-                <element signature="e#267#403#0" />
-                <element signature="e#443#573#0" />
-                <element signature="e#628#1072#0" />
-                <element signature="e#725#894#0" />
-                <element signature="e#904#1068#0" />
-                <element signature="e#1130#1595#0" />
-                <element signature="e#1230#1408#0" />
-                <element signature="e#1418#1591#0" />
-                <element signature="e#1662#2078#0" />
-                <element signature="e#1823#1892#0" />
-                <element signature="e#1902#2074#0" />
-                <element signature="e#1947#2019#0" />
-                <element signature="e#3476#4340#0" />
-                <element signature="e#3785#4094#0" />
-                <element signature="e#4100#4245#0" />
-                <element signature="e#4458#4490#0" />
-                <element signature="e#4773#4791#0" />
-                <element signature="e#4824#4846#0" />
-                <element signature="e#4803#4821#0" />
-                <element signature="e#4917#4939#0" />
-                <element signature="e#5119#5133#0" />
-                <element signature="e#5361#5375#0" />
-                <element signature="e#5401#5419#0" />
-                <element signature="e#5385#5405#0" />
-                <element signature="e#5639#5653#0" />
-                <element signature="e#5437#5535#0" />
-                <element signature="e#5604#5658#0" />
-                <element signature="e#6003#6151#0" />
-                <element signature="e#7138#7168#0" />
-                <element signature="e#7094#7260#0" />
-                <element signature="e#7121#7331#0" />
-                <element signature="e#7177#7287#0" />
-                <element signature="e#7231#7279#0" />
                 <element signature="n#!!block;n#populate_actors#0" />
-                <element signature="e#4785#4795#0" />
-                <element signature="e#4815#5662#0" />
-                <element signature="e#4890#4911#0" />
-                <element signature="e#4942#5579#0" />
-                <element signature="e#5032#5573#0" />
-                <element signature="e#5082#5332#0" />
-                <element signature="e#5362#5563#0" />
-                <element signature="e#5607#5658#0" />
                 <element signature="n#!!block;n#populate_producers#0" />
-                <element signature="e#5833#5843#0" />
-                <element signature="e#5863#6718#0" />
-                <element signature="e#5938#5959#0" />
-                <element signature="e#5990#6635#0" />
-                <element signature="e#6083#6629#0" />
-                <element signature="e#6133#6386#0" />
-                <element signature="e#6416#6619#0" />
-                <element signature="e#6663#6714#0" />
                 <element signature="n#!!block;n#getBase64#0" />
-                <element signature="e#5950#5994#0" />
-                <element signature="e#6032#6072#0" />
                 <element signature="n#!!block;n#update_chips#0" />
-                <element signature="e#6299#6688#0" />
-                <element signature="e#6346#6639#0" />
-                <element signature="e#6398#6631#0" />
-                <element signature="e#6426#6583#0" />
-                <element signature="e#6696#6974#0" />
-                <element signature="e#6737#6922#0" />
               </folding>
             </state>
           </provider>
@@ -159,15 +97,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="184">
               <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ui/test.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="529">
-              <caret line="23" column="3" selection-start-line="23" selection-start-column="3" selection-end-line="23" selection-end-column="3" />
             </state>
           </provider>
         </entry>
@@ -198,6 +127,10 @@
       <find>(err)</find>
       <find>.add_movie_form .multiselect.btn</find>
       <find>console.log</find>
+      <find>.movie_detail_block</find>
+      <find>basic_deta</find>
+      <find>1.25</find>
+      <find>1.25rem</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -209,15 +142,16 @@
         <option value="$PROJECT_DIR$/ui/home.html" />
         <option value="$PROJECT_DIR$/ui/test.html" />
         <option value="$PROJECT_DIR$/ui/js/moment.js" />
-        <option value="$PROJECT_DIR$/ui/index.html" />
-        <option value="$PROJECT_DIR$/ui/add_movie.html" />
         <option value="$PROJECT_DIR$/ui/css/loader.css" />
         <option value="$PROJECT_DIR$/ui/js/common.js" />
         <option value="$PROJECT_DIR$/ui/js/add_movie.js" />
-        <option value="$PROJECT_DIR$/ui/css/main.css" />
         <option value="$PROJECT_DIR$/readme.md" />
-        <option value="$PROJECT_DIR$/server.js" />
         <option value="$PROJECT_DIR$/ui/js/main.js" />
+        <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/server.js" />
+        <option value="$PROJECT_DIR$/ui/add_movie.html" />
+        <option value="$PROJECT_DIR$/ui/index.html" />
+        <option value="$PROJECT_DIR$/ui/css/main.css" />
       </list>
     </option>
   </component>
@@ -233,18 +167,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="ProjectPane" />
       <pane id="Scope" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="IMDB" type="b2602c69:ProjectViewProjectNode" />
-              <item name="IMDB" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -280,12 +204,13 @@
       <updated>1562233593713</updated>
       <workItem from="1562233598262" duration="22229000" />
       <workItem from="1562327782024" duration="27735000" />
-      <workItem from="1562419527996" duration="65092000" />
+      <workItem from="1562419527996" duration="66104000" />
+      <workItem from="1562609840233" duration="1779000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="115056000" />
+    <option name="totallyTimeSpent" value="117847000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -305,7 +230,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="10" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.32941177" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -315,13 +240,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/ui/test.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="529">
-          <caret line="23" column="3" selection-start-line="23" selection-start-column="3" selection-end-line="23" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ui/js/moment.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105823">
@@ -336,27 +254,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="506">
-          <caret line="22" column="1" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ui/js/common.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ui/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-761">
-          <caret line="6" column="65" lean-forward="true" selection-start-line="6" selection-start-column="65" selection-end-line="6" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/readme.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -367,111 +264,70 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server.js">
+    <entry file="file://$PROJECT_DIR$/ui/test.html" />
+    <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="467">
-          <caret line="197" column="3" selection-start-line="197" selection-start-column="3" selection-end-line="197" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ui/add_movie.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="529">
-          <caret line="23" column="44" selection-start-line="23" selection-start-column="44" selection-end-line="23" selection-end-column="44" />
-          <folding>
-            <element signature="n#div#1;n#body#0;n#html#0;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ui/js/add_movie.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="343">
-          <caret line="246" selection-start-line="246" selection-end-line="247" />
-          <folding>
-            <element signature="e#121#193#0" />
-            <element signature="e#193#225#0" />
-            <element signature="e#232#242#0" />
-            <element signature="e#323#337#0" />
-            <element signature="e#410#642#0" />
-            <element signature="e#686#704#0" />
-            <element signature="n#!!block;n#prefill_data#0" />
-            <element signature="e#267#403#0" />
-            <element signature="e#443#573#0" />
-            <element signature="e#628#1072#0" />
-            <element signature="e#725#894#0" />
-            <element signature="e#904#1068#0" />
-            <element signature="e#1130#1595#0" />
-            <element signature="e#1230#1408#0" />
-            <element signature="e#1418#1591#0" />
-            <element signature="e#1662#2078#0" />
-            <element signature="e#1823#1892#0" />
-            <element signature="e#1902#2074#0" />
-            <element signature="e#1947#2019#0" />
-            <element signature="e#3476#4340#0" />
-            <element signature="e#3785#4094#0" />
-            <element signature="e#4100#4245#0" />
-            <element signature="e#4458#4490#0" />
-            <element signature="e#4773#4791#0" />
-            <element signature="e#4824#4846#0" />
-            <element signature="e#4803#4821#0" />
-            <element signature="e#4917#4939#0" />
-            <element signature="e#5119#5133#0" />
-            <element signature="e#5361#5375#0" />
-            <element signature="e#5401#5419#0" />
-            <element signature="e#5385#5405#0" />
-            <element signature="e#5639#5653#0" />
-            <element signature="e#5437#5535#0" />
-            <element signature="e#5604#5658#0" />
-            <element signature="e#6003#6151#0" />
-            <element signature="e#7138#7168#0" />
-            <element signature="e#7094#7260#0" />
-            <element signature="e#7121#7331#0" />
-            <element signature="e#7177#7287#0" />
-            <element signature="e#7231#7279#0" />
-            <element signature="n#!!block;n#populate_actors#0" />
-            <element signature="e#4785#4795#0" />
-            <element signature="e#4815#5662#0" />
-            <element signature="e#4890#4911#0" />
-            <element signature="e#4942#5579#0" />
-            <element signature="e#5032#5573#0" />
-            <element signature="e#5082#5332#0" />
-            <element signature="e#5362#5563#0" />
-            <element signature="e#5607#5658#0" />
-            <element signature="n#!!block;n#populate_producers#0" />
-            <element signature="e#5833#5843#0" />
-            <element signature="e#5863#6718#0" />
-            <element signature="e#5938#5959#0" />
-            <element signature="e#5990#6635#0" />
-            <element signature="e#6083#6629#0" />
-            <element signature="e#6133#6386#0" />
-            <element signature="e#6416#6619#0" />
-            <element signature="e#6663#6714#0" />
-            <element signature="n#!!block;n#getBase64#0" />
-            <element signature="e#5950#5994#0" />
-            <element signature="e#6032#6072#0" />
-            <element signature="n#!!block;n#update_chips#0" />
-            <element signature="e#6299#6688#0" />
-            <element signature="e#6346#6639#0" />
-            <element signature="e#6398#6631#0" />
-            <element signature="e#6426#6583#0" />
-            <element signature="e#6696#6974#0" />
-            <element signature="e#6737#6922#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ui/css/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="114" column="29" selection-start-line="114" selection-start-column="29" selection-end-line="114" selection-end-column="29" />
+        <state relative-caret-position="23">
+          <caret line="1" column="21" selection-start-line="1" selection-start-column="21" selection-end-line="1" selection-end-column="21" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ui/js/main.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1288">
-          <caret line="56" column="17" selection-start-line="56" selection-start-column="6" selection-end-line="56" selection-end-column="17" />
+          <caret line="56" column="43" selection-start-line="56" selection-start-column="43" selection-end-line="56" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ui/js/add_movie.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5382">
+          <caret line="246" selection-start-line="246" selection-end-line="247" />
+          <folding>
+            <element signature="n#!!block;n#prefill_data#0" />
+            <element signature="n#!!block;n#populate_actors#0" />
+            <element signature="n#!!block;n#populate_producers#0" />
+            <element signature="n#!!block;n#getBase64#0" />
+            <element signature="n#!!block;n#update_chips#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ui/js/common.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4416">
+          <caret line="192" column="48" selection-start-line="192" selection-start-column="48" selection-end-line="192" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ui/add_movie.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="4" column="71" selection-start-line="4" selection-start-column="71" selection-end-line="4" selection-end-column="71" />
+          <folding>
+            <element signature="n#div#1;n#body#0;n#html#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ui/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="4" column="71" selection-start-line="4" selection-start-column="71" selection-end-line="4" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ui/css/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="226">
+          <caret line="20" column="26" selection-start-line="20" selection-start-column="26" selection-end-line="20" selection-end-column="26" />
         </state>
       </provider>
     </entry>

@@ -5,10 +5,10 @@ let Pool = require('pg').Pool;
 let bodyParser = require('body-parser');
 
 let config = {
-  user: 'username',
-  database: 'database_name',
-  host: 'host_name',
-  password: 'password'
+  user: 'postgres',
+  database: 'My IMDB',
+  host: 'localhost',
+  password: 'abcd@123456'
 };
 
 let app = express();

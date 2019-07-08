@@ -2,9 +2,26 @@ body {
     font-family: 'Roboto', sans-serif !important;
 }
 
+@media (max-width: 500px) {
+    .movie_details_page {
+        padding: auto;
+    }
+}
+
+@media (min-width: 501px) {
+    .movie_details_page {
+        padding: 5rem;
+    }
+}
+
 .movie_details_page {
-    padding: 5rem;
     box-shadow: 0px 5px 5px rgba(0,0,0,0.2);
+}
+
+@media (max-width: 500px) {
+    .movie_details_page .heading {
+        margin-top: 5rem;
+    }
 }
 
 .movie_details_page .heading {
@@ -14,18 +31,47 @@ body {
     margin-bottom: 5rem;
 }
 
+@media (min-width: 501px) {
+    .edit_movie_btn {
+        margin: auto;
+    }
+}
+
+@media (max-width: 500px) {
+    .edit_movie_btn {
+        margin: 2rem 1.25rem;
+    }
+}
+
 .movie_details_page .add_movie_btn, .edit_movie_btn {
     text-align: right;
 }
 
+@media (max-width: 500px) {
+    .movie_detail_block {
+        padding: 0rem;
+    }
+}
+
+@media (min-width: 501px) {
+    .movie_detail_block {
+        padding: 3rem;
+    }
+}
+
 .movie_detail_block {
-    padding: 3rem 3rem;
     margin: 2rem 0rem;
     border: 1px solid #ddf;
 }
 
 .movie_detail_block .image img {
     width: 100%;
+}
+
+@media (max-width: 500px) {
+    .basic_details {
+        margin: 1.25rem;
+    }
 }
 
 .basic_details .movie_name {
@@ -50,8 +96,19 @@ body {
     margin-top: 1rem;
 }
 
+@media (max-width: 500px) {
+    .movie_detail_block .plot {
+        margin: 2rem 1.25rem;
+    }
+}
+
+@media (min-width: 501px) {
+    .movie_detail_block .plot {
+        margin: 3rem 0rem;
+    }
+}
+
 .movie_detail_block .plot {
-    margin: 3rem 0rem;
     font-size: 1.5rem;
     font-style: italic;
     line-height: 1.75;
@@ -60,8 +117,16 @@ body {
 
 /* add movie form */
 
-.add_movie_form {
-    margin: 5rem 20rem;
+@media (max-width: 500px) {
+    .add_movie_form {
+        margin: auto;
+    }
+}
+
+@media (min-width: 501px) {
+    .add_movie_form {
+        margin: 5rem 20rem;
+    }
 }
 
 .details_form {
