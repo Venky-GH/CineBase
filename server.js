@@ -172,27 +172,6 @@ app.post('/add_update_movie_details', function (req, response) {
     })().catch(e => console.error(e.stack))
 });
 
-app.post('/rename', function (req, res) {
-  let currentPath = './ui/' + req.body.currentPath;
-  let newPath = './ui/' + req.body.newPath;
-  let currentName = req.body.currentName;
-  let newName = req.body.newName;
-  fs.rename(currentPath, newPath, function (err) {
-    if (err) {
-      console.log('ERROR: ' + err);
-      res.status(500).send("Something went wrong!");
-    }
-  });
-  pool.query('UPDATE "fileSystem" SET name = ($1), path = ($2) WHERE name = ($3) AND path = ($4)', [newName, newPath, currentName, currentPath], function (err, result) {
-    if (err) {
-      console.log("Something went wrong while updating!");
-    } else {
-      console.log("Successfully updated!");
-    }
-  });
-  res.status(200).send("Successfully changed!");
-});
-
 app.listen(9090, function () {
   console.log('App listening on port 9090!');
 });

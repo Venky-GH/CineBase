@@ -22,7 +22,6 @@ $(function () {
       if (url.indexOf("?") !== -1) {
         main_form_details = JSON.parse(localStorage.getItem("movie_details"));
         localStorage.removeItem("movie_details");
-        console.log(main_form_details);
         image_decoded_val = main_form_details.image;
         $(".form_type").html("Update");
         $(".add_movie_form .note").removeClass("hidden");
@@ -349,6 +348,7 @@ function getBase64(file) {
   };
   reader.onerror = function (error) {
     console.log('Error: ', error);
+    show_toast(0, "Something went wrong!", "Try uploading the image again.");
   };
 }
 
