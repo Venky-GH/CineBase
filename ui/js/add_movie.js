@@ -64,30 +64,32 @@ function setEventListeners() {
   });
 
   $("input[name='actor_type']").change(function () {
-    $(".actor_chip_holder").addClass("hidden");
     var val = $(this).val();
     if (val == 1) {
       $(".add_movie_form .existing_actor").removeClass("hidden");
       $(".add_movie_form .new_actor").addClass("hidden");
       actor.mode = 1; // 1 - existing
+      $(".actor_chip_holder").addClass("hidden");
     } else {
       $(".add_movie_form .existing_actor").addClass("hidden");
       $(".add_movie_form .new_actor").removeClass("hidden");
       actor.mode = 2; // 2 - New
+      $(".actor_chip_holder").removeClass("hidden");
     }
   });
 
   $("input[name='producer_type']").change(function () {
-    $(".producer_chip_holder").addClass("hidden");
     var val = $(this).val();
     if (val == 1) {
       $(".add_movie_form .existing_producer").removeClass("hidden");
       $(".add_movie_form .new_producer").addClass("hidden");
       producer.mode = 1; // 1 - existing
+      $(".producer_chip_holder").addClass("hidden");
     } else {
       $(".add_movie_form .existing_producer").addClass("hidden");
       $(".add_movie_form .new_producer").removeClass("hidden");
       producer.mode = 2; // 2 - New
+      $(".producer_chip_holder").removeClass("hidden");
     }
   });
 
@@ -368,7 +370,6 @@ function update_chips(type) {
         actor_chip_holder.append(chip);
       });
     }
-    actor_chip_holder.removeClass("hidden");
   } else {
     if (!producer.hasOwnProperty("id")) {
       var chip = $(".chip_clone").clone();
@@ -376,6 +377,5 @@ function update_chips(type) {
       chip.html(producer.name);
       producer_chip_holder.append(chip);
     }
-    producer_chip_holder.removeClass("hidden");
   }
 }
