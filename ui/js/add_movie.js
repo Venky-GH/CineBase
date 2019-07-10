@@ -357,9 +357,8 @@ function getBase64(file) {
 function update_chips(type) {
   var actor_chip_holder = $(".actor_chip_holder");
   var producer_chip_holder = $(".producer_chip_holder");
-  actor_chip_holder.empty();
-  producer_chip_holder.empty();
   if (type === "actor") {
+    actor_chip_holder.empty();
     if (!actor.details.hasOwnProperty("ids")) {
       $.each(actor.details, function (key, value) {
         if (key !== "ids") {
@@ -371,6 +370,7 @@ function update_chips(type) {
       });
     }
   } else {
+    producer_chip_holder.empty();
     if (!producer.hasOwnProperty("id")) {
       var chip = $(".chip_clone").clone();
       chip.removeClass("chip_clone hidden").addClass("chip");

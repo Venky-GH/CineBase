@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ded772b7-d61b-4db8-9921-2077d8449456" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ui/js/add_movie.js" beforeDir="false" afterPath="$PROJECT_DIR$/ui/js/add_movie.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -102,8 +99,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ui/js/add_movie.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="243">
-              <caret line="364" column="27" lean-forward="true" selection-start-line="364" selection-start-column="27" selection-end-line="364" selection-end-column="27" />
+            <state relative-caret-position="389">
+              <caret line="372" column="33" selection-start-line="372" selection-start-column="33" selection-end-line="372" selection-end-column="33" />
               <folding>
                 <element signature="e#162#1179#0" />
                 <element signature="e#270#302#0" />
@@ -115,8 +112,6 @@
                 <element signature="e#3387#3468#0" />
                 <element signature="e#3474#3677#0" />
                 <element signature="e#3520#3628#0" />
-                <element signature="e#3765#4643#0" />
-                <element signature="e#4383#4528#0" />
                 <element signature="e#4719#7525#0" />
                 <element signature="e#4802#4890#0" />
                 <element signature="e#5084#5410#0" />
@@ -302,12 +297,12 @@
       <workItem from="1562609840233" duration="2147000" />
       <workItem from="1562645873945" duration="2182000" />
       <workItem from="1562682869722" duration="1248000" />
-      <workItem from="1562783704825" duration="5685000" />
+      <workItem from="1562783704825" duration="6643000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="127330000" />
+    <option name="totallyTimeSpent" value="128288000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -440,8 +435,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ui/js/add_movie.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="364" column="27" lean-forward="true" selection-start-line="364" selection-start-column="27" selection-end-line="364" selection-end-column="27" />
+        <state relative-caret-position="389">
+          <caret line="372" column="33" selection-start-line="372" selection-start-column="33" selection-end-line="372" selection-end-column="33" />
           <folding>
             <element signature="e#162#1179#0" />
             <element signature="e#270#302#0" />
@@ -453,8 +448,6 @@
             <element signature="e#3387#3468#0" />
             <element signature="e#3474#3677#0" />
             <element signature="e#3520#3628#0" />
-            <element signature="e#3765#4643#0" />
-            <element signature="e#4383#4528#0" />
             <element signature="e#4719#7525#0" />
             <element signature="e#4802#4890#0" />
             <element signature="e#5084#5410#0" />
