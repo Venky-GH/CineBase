@@ -77,11 +77,12 @@ App listening on port 9090!
 
 * **Schema**: Check out the database schema by viewing the image - **schema.png** with 5 tables and a single view. The schema has been normalized and is in 3NF.
 
-* **Validation**: Validation has been added on the following fields - 
+* **Validations**: Validations have been added on the following fields - 
     1. **Actor(s)**: Check if at least one actor has been added/selected.
     2. **Producer**: Check if exactly one producer has been added/selected.
     3. **Year of Release**: Check if the year entered is a valid year.
-    4. **Common Validation**: Check if a required field is not empty.
+    4. **File Size/Type Check**: Check if the file type is any of - jpg, jpeg, png, gif. Also, check if the file size exceeds 2MB.
+    5. **Common Validation**: Check if a required field is not empty.
 
 ```
 // actor(s) validation
